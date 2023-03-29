@@ -12,8 +12,14 @@ object ApiClient {
     addConverterFactory(GsonConverterFactory.create()).build()
         .create(ApiInterface::class.java)
 
-    fun ApiServiceClass():ApiInterface=Retrofit.Builder().baseUrl(Movie_BASE_URL).
-    addConverterFactory(GsonConverterFactory.create()).build()
-        .create(ApiInterface::class.java)
+
+    val api : ApiInterface by lazy {
+        Retrofit.Builder()
+            .baseUrl(Movie_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiInterface::class.java)
+    }
+
 
 }

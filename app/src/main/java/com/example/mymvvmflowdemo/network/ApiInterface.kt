@@ -11,5 +11,5 @@ interface ApiInterface {
     @GET("/comments/{id}")
 suspend fun getUserDetail(@Path("id")id:Int):UserDetailResponse
 @GET("popular?")
-suspend fun getMovieList(@Query("api_key")apiKey:String):Movie
+ fun getMovieList(@Query("api_key")apiKey:String):Call<Movie>
 }

@@ -1,8 +1,11 @@
 package com.example.mymvvmflowdemo.network
 
+import com.example.mymvvmflowdemo.model.DetailResponse
+import com.example.mymvvmflowdemo.model.DetailResponseItem
 import com.example.mymvvmflowdemo.model.Movie
 import com.example.mymvvmflowdemo.model.UserDetailResponse
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -12,4 +15,6 @@ interface ApiInterface {
 suspend fun getUserDetail(@Path("id")id:Int):UserDetailResponse
 @GET("popular?")
  fun getMovieList(@Query("api_key")apiKey:String):Call<Movie>
+ @GET("user")
+ suspend fun getUsers():Response<List<DetailResponseItem>>
 }

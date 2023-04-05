@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 viewModel.getUserDetail(binding.searchEditText.text.toString().toInt())
             }
         }
+
             //Since flow run asynchronous start listening on background thread
             lifecycleScope.launch {
                 viewModel.userState.collect{

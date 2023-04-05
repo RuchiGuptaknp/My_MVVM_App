@@ -1,5 +1,6 @@
 package com.example.mymvvmflowdemo.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ import com.example.mymvvmflowdemo.databinding.MovieListBinding
 import com.example.mymvvmflowdemo.viewModel.MovieViewModel
 
 
-class MovieListActivity:AppCompatActivity() {
+class MovieListActivity:AppCompatActivity(){
     private lateinit var binding : MovieListBinding
         private lateinit var viewModel: MovieViewModel
         private lateinit var movieAdapter : MovieAdapter
@@ -36,4 +37,11 @@ class MovieListActivity:AppCompatActivity() {
                 adapter = movieAdapter
             }
         }
-    }
+
+   /* override fun setOnItemClick() {
+        val intent= Intent(this,UserDetailListActivity::class.java)
+        startActivity(intent)
+
+
+    }*/
+}

@@ -29,7 +29,7 @@ class MovieViewModel: ViewModel() {
             }
         })
     }
-    fun observeMovieLiveData(): LiveData<List<MovieResult>> {
+    fun observeMovieLiveData(): MutableLiveData<List<MovieResult>> {
         return movieLiveData
 
     }
